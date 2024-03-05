@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pendaftaran Mahasiswa Baru</title>
+    <link rel="icon" type="image/png" href="img/Politeknik_Negeri_Madiun.png" sizes="16x16" />
+    <style>
+        body {
+            font-family: 'Bahnschrift', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff9f9;
+            border: 1px solid #ddd;
+        }
+
+        .letter {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        header img {
+            float: left;
+            margin-right: 20px;
+            width: 120px;
+            height: auto;
+        }
+
+        table.with-border {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.with-border th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            font-family: 'Bahnschrift', sans-serif;
+            line-height: 0.5;
+            font-size: 12px;
+        }
+
+        table.with-border td {
+            border: 1px solid black;
+            padding: 8px;
+            font-family: 'Bahnschrift', sans-serif;
+            line-height: 0.5;
+            font-size: 12px;
+        }
+
+        table.no-border {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.no-border th,
+        table.no-border td {
+            padding: 8px;
+            text-align: left;
+            font-family: 'Bahnschrift', sans-serif;
+            line-height: 0.3;
+            font-size: 12px;
+        }
+
+        td.left-align {
+            text-align: left;
+        }
+
+        td.center-align {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Pendaftaran Mahasiswa Baru</h1>
+    <div id="content">
+        <fieldset>
+            <legend>Formulir Pendaftaran</legend>
+            <form action="proses.php" method="POST" enctype="multipart/form-data">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required><br><br>
+
+                <label for="tempat_lahir">Tempat Lahir/tanggal lahir:</label>
+                <input type="text" id="tempat_lahir" name="tempat_lahir">
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir"><br><br>
+
+                <label for="jenis_kelamin">Jenis Kelamin:</label>
+                <input type="radio" id="laki_laki" name="jenis_kelamin" value="Laki-laki" required>
+                <label for="laki_laki">Laki-laki</label>
+                <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+                <label for="perempuan">Perempuan</label><br><br>
+
+                <label for="agama">Agama:</label>
+                <select id="agama" name="agama" required>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen">Kristen</option>
+                    <option value="Katolik">Katolik</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Budha">Budha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select><br><br>
+
+                <label for="jurusan">Jurusan:</label>
+                <select id="jurusan" name="jurusan" required>
+                    <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+                    <option value="Administrasi Bisnis">Administrasi Bisnis</option>
+                    <option value="Teknik Komputer Kontrol">Teknik Komputer Kontrol</option>
+                    <option value="Teknik Listrik">Teknik Listrik</option>
+                    <option value="Mesin Otomotif">Mesin Otomotif</option>
+                    <option value="Perkeretaapian">Perkeretaapian</option>
+                    <option value="Teknologi Informasi">Teknologi Informasi</option>
+                    <option value="Akuntansi">Akuntansi</option>
+                </select><br><br>
+
+                <label for="no_ijazah">No Ijazah:</label>
+                <input type="text" id="no_ijazah" name="no_ijazah" required><br><br>
+
+                <label for="foto">Foto (Ukuran File Maks.20Kb): </label> <label id="foto-label" class="file-upload">
+                    Choose File
+                    <input type="file" id="foto" name="foto" accept="image/jpeg, image/png" required>
+                </label> No File Chosen<br><br>
+
+
+                <label for="nama_ayah">Nama Ayah:</label>
+                <input type="text" id="nama_ayah" name="nama_ayah" required><br><br>
+
+                <label for="nama_ibu">Nama Ibu:</label>
+                <input type="text" id="nama_ibu" name="nama_ibu" required><br><br>
+
+                <label for="alamat_rumah">Alamat Rumah:</label>
+                <textarea id="alamat_rumah" name="alamat_rumah" required></textarea><br><br>
+
+                <label for="no_telpon">No Telepon:</label>
+                <input type="tel" id="no_telpon" name="no_telpon" pattern="[0-9]{10,12}" required><br><br>
+
+                <label for="sekolah_asal">Sekolah Asal:</label>
+                <input type="text" id="sekolah_asal" name="sekolah_asal" required><br><br>
+
+                <label for="alamat_sekolah_asal">Alamat Sekolah Asal:</label>
+                <textarea id="alamat_sekolah_asal" name="alamat_sekolah_asal" required></textarea><br><br>
+
+                <label for="info">Tahu Informasi Ini Dari</label>
+                <input type="checkbox" id="koran" name="info[]" value="Koran"> <label for="koran">Koran</label>
+                <input type="checkbox" id="website" name="info[]" value="Website"> <label for="website">Website</label>
+                <input type="checkbox" id="televisi" name="info[]" value="Televisi"> <label
+                    for="televisi">Televisi</label>
+                <input type="checkbox" id="radio" name="info[]" value="Radio"> <label for="radio">Radio</label>
+                <input type="checkbox" id="teman" name="info[]" value="Teman"> <label for="teman">Teman</label><br><br>
+
+                <button type="submit">DAFTAR</button>
+                <button type="reset">BATAL</button>
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+</html>
