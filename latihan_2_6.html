@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML map Tag</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+  <h1>Website Title/Header</h1>
+</header>
+<main>
+  <section id="content">
+    <h2>HTML map Tag</h2>
+    <p>The HTML <code>&lt;map&gt;</code> tag defines an image map. An image map is an image with clickable areas. Areas are defined by one or more <code>&lt;area&gt;</code> tags.</p>
+    <p>Here is an example of using the <code>&lt;map&gt;</code> and <code>&lt;area&gt;</code> tags:</p>
+    <img src="gambar/workplace.jpg" alt="Workplace" usemap="#imageMap">
 
+    <map name="imageMap">
+      <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://en.wikipedia.org/wiki/Computer">
+      <area shape="rect" coords="298,172,333,250" alt="Phone" href="https://en.wikipedia.org/wiki/Telephone">
+      <area shape="circle" coords="337,300,44" alt="Coffee" href="https://en.wikipedia.org/wiki/Coffee">
+    </map>
+
+    <p>In the example above, the "workplace.jpg" image has three clickable areas:</p>
+    <ul>
+      <li>The rectangular area around the computer links to the Wikipedia article about computers.</li>
+      <li>The rectangular area around the phone links to the Wikipedia article about telephones.</li>
+      <li>The circular area around the coffee cup links to the Wikipedia article about coffee.</li>
+    </ul>
+    <p>You can use the <code>&lt;map&gt;</code> and <code>&lt;area&gt;</code> tags to create interactive and informative images.</p>
+  </section>
+  <section id="link">
+    <ul>
+      <li><a href="#">London</a></li>
+      <li><a href="#">Paris</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </section>
+</main>
+<footer>
+  <p><em>copyright@nama_nim2023</em></p>
+</footer>
+</body>
+</html>
